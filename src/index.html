@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+  <title>Random Number</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lucky Number Raffle"/>
+<meta name="copyright"content="alipek-lab">
+  <link href="/dist/output.css" rel="stylesheet">
+  <script>
+    function creat(){
+        var strings=[];
+        while(strings.length < 6){
+            rand = Math.floor(Math.random() * 48)+1; 
+            if (!strings.includes(rand)) {
+        strings.push(rand);
+    }
+        } 
+        strings.sort(function(a, b){return a - b});  
+        document.getElementById("numbers").innerHTML="";
+        for(i=0;i<6;i++){
+        if (strings[i] !== undefined) {
+          document.getElementById("numbers").innerHTML += strings[i];
+
+          if (i < 5){
+        document.getElementById("numbers").innerHTML += " - ";
+      }
+    }
+    }
+  }
+</script>
+</head>
+<body class="bg-white-300 h-full grid place-items-center">
+  <h1 class="text-3xl font-bold bg-[#ffe177] px-4 h-10 inline-flex item-center rounded-lg">
+    Lucky Number Raffle
+  </h1>
+  
+  <div class="gap-8 columns-1 ...">
+    <img class="w-64 aspect-square ..." src="/img/raffle.png" />
+   
+  </div>
+  <button onclick="creat()" class="text-3xl bg-[#fe73c5] px-4 h-10 inline-flex item-center rounded-lg hover:bg-[#c94f97]">Random Numbers</button>
+  <div role="alert" id="numbers" class="text-7xl font-sans text-[#7a6d79] md:font-serif">
+   
+    </div>
+</body>
+</html>
