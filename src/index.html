@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Lucky Number Raffle"/>
 <meta name="copyright"content="alipek-lab">
-  <link href="/dist/output.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
   <script>
     function creat(){
         var strings=[];
@@ -20,8 +20,7 @@
         document.getElementById("numbers").innerHTML="";
         for(i=0;i<6;i++){
         if (strings[i] !== undefined) {
-          document.getElementById("numbers").innerHTML += strings[i];
-
+          document.getElementById("numbers").innerHTML +="<button class='text-4xl font-bold text-[#ffffff] w-20 h-20 item-center self-center rounded-full border-4 border-indigo-200 border-x-indigo-500 bg-gradient-to-r from-cyan-500 to-blue-500'>"+ strings[i] +"</button>";
           if (i < 5){
         document.getElementById("numbers").innerHTML += " - ";
       }
@@ -35,6 +34,7 @@
     Lucky Number Raffle
   </h1>
   
+
   <div class="gap-8 columns-1 ...">
     <img class="w-64 aspect-square ..." src="/img/raffle.png" />
    
